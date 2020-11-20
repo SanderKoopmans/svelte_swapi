@@ -1,6 +1,7 @@
 <script>
+    export let homeworld;
     const planet = (async () => {
-    const response = await fetch(`https://swapi.dev/api/planet/${id}`)
+    const response = await fetch({homeworld})
     return await response.json();
   })();
 </script>
@@ -12,4 +13,4 @@
 {:then data} 
   <p>{data.name}</p>
 {/await}
-<p>Planet</p>
+<a href={homeworld}>Homeworld</a>

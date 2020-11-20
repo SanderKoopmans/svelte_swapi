@@ -1,6 +1,6 @@
 <script>
   import Planet from './Planet.svelte';
-  
+
   const people = (async () => {
     const response = await fetch('https://swapi.dev/api/people/')
     return await response.json();
@@ -28,7 +28,7 @@
 <div class="card-person">
   <h2>{person.name}</h2>
   <p>{person.gender}</p>
-  <Planet />
+  <Planet homeworld={person.homeworld} />
 </div>
 {/each}
 {:catch error}
