@@ -1,11 +1,19 @@
 <script>
-  export let name;
+  import Card from './Card.svelte';
 </script>
 
 <style>
+  .App {
+    display: flex;
+    flex-direction: column;
+  }
+
   h1 {
-    color: fuchsia;
+    color: white;
   }
 </style>
 
-<h1>Hello {name}!</h1>
+<div class="App">
+  <h1>Swapi experiment</h1>
+  <Card />
+</div>
