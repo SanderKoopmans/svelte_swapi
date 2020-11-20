@@ -23,11 +23,17 @@ module.exports = {
 	module: {
 		rules: [
 			{
+        test: /node_modules\/svelte\/.*\.mjs$/,
+        resolve: {
+          fullySpecified: false // load Svelte correctly
+        }
+      },
+			{
 				test: /\.svelte$/,
 				use: {
 					loader: 'svelte-loader',
 					options: {
-						emitCss: true,
+						emitCss: false,
 						hotReload: true
 					}
 				}
